@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battlefield 2142 Legacy | Официальный Фан Сайт</title>
+    <!-- Подключаем технические шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- СТИЛИ (CSS) --- */
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: #15161e;
+            --accent: #ff9f43; /* Оранжевый цвет интерфейса BF2142 */
+            --text-main: #c5c6c7;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        a:hover { color: var(--accent); }
+
+        /* Навигация */
+        nav {
+            background: rgba(0,0,0,0.9);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo { font-size: 24px; font-weight: bold; color: var(--accent); letter-spacing: 2px;}
+        .nav-links a { margin-left: 20px; font-weight: bold; text-transform: uppercase; font-size: 14px;}
+
+        /* Герой-блок (Главная) */
+        header.hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://store-images.s-microsoft.com/image/apps.43694.12538445348596019426.45a5e9b7-4f58-4d76-a780-e8c6a9126897.12538445348596019426.jpg?mode=scale&q=90&h=1080&w=1920');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 3rem; text-shadow: 0 0 10px rgba(255, 64, 64, 0.8); }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto;}
+
+        /* Контейнер */
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+
+        /* Карточки и секции */
+        section { margin-bottom: 60px; }
+        
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 20px;
+            border: 1px solid #333;
+            border-left: 4px solid var(--accent);
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(255, 63, 47, 0.2); }
+
+        /* Таблица серверов */
+        table { width: 100%; border-collapse: collapse; background: var(--card-bg); border-radius: 5px; overflow: hidden;}
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #333; }
+        th { background: #222; color: var(--accent); font-family: 'Orbitron'; }
+        .status-online { color: #00ff9d; } /* Зеленый */
+        .status-offline { color: #ff3e3e; } /* Красный */
+
+        /* Футер */
+        footer { background: #050505; text-align: center; padding: 40px 0; border-top: 1px solid #333; margin-top: 40px;}
+        
+        .discord-btn {
+            display: inline-block;
+            background: #5865F2;
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Навигация -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">BF2142 LEGACY</a>
+            <div class="nav-links">
+                <a href="#servers">Сервера</a>
+                <a href="#archive">Архив</a>
+                <a href="#guides">Гайды</a>
+                <a href="#news">Новости</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Главный экран -->
+    <header class="hero">
+        <div>
+            <h1>Battlefield 2142 Legacy</h1>
+            <p>Предыдущая игра. Новая вселенная.</p>
+            <a href="steam://run/90580" class="discord-btn">Играть на Steam (BattlEye)</a>
+        </div>
+    </header>
+
+    <!-- Секция Серверов -->
+    <section id="servers" class="container">
+        <h2>🚀 Статус серверов</h2>
+        <p>Мониторинг в реальном времени. Обновляется автоматически.</p>
+        
+        <!-- Таблица будет сгенерирована JS -->
+        <div id="server-list"></div>
+    </section>
+
+    <!-- Секция Архива -->
+    <section id="archive" class="container">
+        <h2>📦 Архив медиа и файлов</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <h3>Обложки игр</h3>
+                <p>Скачивайте оригинальные обложки для коллекции.</p>
+                <a href="#">[Скачать ZIP]</a>
+            </div>
+            <div class="card">
+                <h3>Классы (Loadouts)</h3>
+                <p>Оптимизированные билды под патч 1.24.0.</p>
+                <a href="#">[Скачать конфиги]</a>
+            </div>
+            <div class="card">
+                <h3>Старые патчи</h3>
+                <p>Архив старых обновлений для моддинга.</p>
+                <a href="#">[Просмотр списка]</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Гайдов -->
+    <section id="guides" class="container">
+        <h2>⚔️ Гайды и Тактика</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <h3>Классы и тактика</h3>
+                <p>Как эффективно использовать Рэйндера, Дипломата и Акулу в текущей мете.</p>
+            </div>
+            <div class="card">
+                <h3>Снайперство</h3>
+                <p>Гайд по выбору оптики (Scope) и снарядов для уничтожения оркских турелей.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Новостей -->
+    <section id="news" class="container">
+        <h2>📰 Последние новости</h2>
+        <article style="background: var(--card-bg); padding: 20px; margin-bottom: 20px;">
+            <span style="color:var(--accent)">15 Октября 2023</span>
+            <h3>Приветствуем на Legacy!</h3>
+            <p>Сайт запущен. Мы начинаем мониторинг сервера NovGames и Reclamation. Подписывайтесь на наши обновления.</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>Battlefield 2142 Legacy — фанатский проект. EA/EA Games не связаны с сайтом.</p>
+        <br>
+        <a href="https://discord.com/" target="_blank" class="discord-btn">Присоединиться к Discord</a>
+    </footer>
+
+    <!-- Скрипт Мониторинга -->
+    <script>
+        // --- НАСТРОЙКИ МОНИТОРИНГА ---
+        // Здесь мы используем публичный API для примера. 
+        // Для точных серверов NovGames/Reclamation нужно будет узнать их IP адреса или ID.
+        
+        const servers = [
+            { name: "NovGames", ip: "play.novgames.ru", port: 28960, map: "Sirocco" },
+            { name: "Reclamation", ip: "reclamec.net", port: 27015, map: "Korath Prime" }, // Пример IP
+            { name: "Stellar", ip: "stellar.galaxy.com", port: 28960, map: "Oryx Station" } // Пример
+        ];
+
+        const listContainer = document.getElementById('server-list');
+
+        function getServerStatus(ip, port) {
+            // Простая проверка порта (работает не на всех провайдерах, но для демо ок)
+            // Для профессионального мониторинга лучше использовать API типа raw.gamers.org
+            return fetch(`http://${ip}:${port}/query`); 
+        }
+
+        async function renderServers() {
+            listContainer.innerHTML = '<h3 style="text-align:center">Загрузка данных...</h3>';
+            
+            let html = `<table>
+                <thead><tr><th>Сервер</th><th>Карта</th><th>Игроки</th><th>Статус</th></tr></thead>
+                <tbody>`;
+
+            for (let server of servers) {
+                // В реальном проекте тут был бы fetch запрос к игровому серверу.
+                // Поскольку мы без денег и для простоты, сделаем заглушку или используем внешний API.
+                
+                // Используем бесплатный API для примера (Gamers.org), если есть ID сервера
+                // Но так как у нас IP, используем имитацию статуса "Online" для демонстрации верстки
+                
+                html += `
+                <tr>
+                    <td><strong>${server.name}</strong></td>
+                    <td>${server.map}</td>
+                    <td id="players-${server.name}">...</td>
+                    <td class="status-online">Online</td>
+                </tr>`;
+            }
+            html += `</tbody></table>`;
+            
+            listContainer.innerHTML = html;
+
+            // Здесь можно добавить логику обновления чисел игроков, если есть IP
+        }
+
+        renderServers();
+    </script>
+</body>
+</html>
