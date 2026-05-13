@@ -6,6 +6,7 @@
     <title>Battlefield 2142 Legacy | Фан Сайт</title>
     <!-- Подключаем технические шрифты -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="geekbot_ru_1778691961213.png">
     <style>
         /* --- СТИЛИ (CSS) --- */
         :root {
@@ -31,8 +32,15 @@
             margin-bottom: 10px;
         }
 
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        a:hover { color: var(--accent); }
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+            a:hover {
+                color: var(--accent);
+            }
 
         /* Навигация */
         nav {
@@ -43,7 +51,7 @@
             z-index: 100;
             border-bottom: 2px solid var(--accent);
         }
-        
+
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -53,30 +61,55 @@
             padding: 0 20px;
         }
 
-        .logo { font-size: 24px; font-weight: bold; color: var(--accent); letter-spacing: 2px;}
-        .nav-links a { margin-left: 20px; font-weight: bold; text-transform: uppercase; font-size: 14px;}
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent);
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
 
         /* Герой-блок (Главная) */
         header.hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://store-images.s-microsoft.com/image/apps.43694.12538445348596019426.45a5e9b7-4f58-4d76-a780-e8c6a9126897.12538445348596019426.jpg?mode=scale&q=90&h=1080&w=1920');
-            background-size: cover;
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('000074282640.jpg');
+            background-size: 100% 100%;
             background-position: center;
-            height: 60vh;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
         }
 
-        .hero h1 { font-size: 3rem; text-shadow: 0 0 10px rgba(255, 64, 64, 0.8); }
-        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto;}
+        .hero h1 {
+            font-size: 5rem;
+            text-shadow: 0 0 15px rgba(255, 64, 64, 0.8);
+        }
+
+        .hero p {
+            font-size: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
         /* Контейнер */
-        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
 
         /* Карточки и секции */
-        section { margin-bottom: 60px; }
-        
+        section {
+            margin-bottom: 60px;
+        }
+
         .grid-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -90,18 +123,51 @@
             border-left: 4px solid var(--accent);
             transition: transform 0.2s;
         }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(255, 63, 47, 0.2); }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(255, 63, 47, 0.2);
+            }
 
         /* Таблица серверов */
-        table { width: 100%; border-collapse: collapse; background: var(--card-bg); border-radius: 5px; overflow: hidden;}
-        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #333; }
-        th { background: #222; color: var(--accent); font-family: 'Orbitron'; }
-        .status-online { color: #00ff9d; } /* Зеленый */
-        .status-offline { color: #ff3e3e; } /* Красный */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        th {
+            background: #222;
+            color: var(--accent);
+            font-family: 'Orbitron';
+        }
+
+        .status-online {
+            color: #00ff9d;
+        }
+        /* Зеленый */
+        .status-offline {
+            color: #ff3e3e;
+        }
+        /* Красный */
 
         /* Футер */
-        footer { background: #050505; text-align: center; padding: 40px 0; border-top: 1px solid #333; margin-top: 40px;}
-        
+        footer {
+            background: #050505;
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #333;
+            margin-top: 40px;
+        }
+
         .ds-btn {
             display: inline-block;
             background: #5865F2;
@@ -109,7 +175,9 @@
             padding: 10px 20px;
             border-radius: 5px;
             margin-top: 10px;
+            margin-right: 20px;
         }
+
         .vk-btn {
             display: inline-block;
             background: #0077FF;
@@ -117,7 +185,9 @@
             padding: 10px 20px;
             border-radius: 5px;
             margin-top: 10px;
-        } 
+            margin-right: 20px;
+        }
+
         .tg-btn {
             display: inline-block;
             background: #0088CC;
@@ -125,7 +195,8 @@
             padding: 10px 20px;
             border-radius: 5px;
             margin-top: 10px;
-        } 
+            margin-right: 20px;
+        }
     </style>
 </head>
 <body>
@@ -147,8 +218,16 @@
     <header class="hero">
         <div>
             <h1>Battlefield 2142 Legacy</h1>
-            <p><>Совсем скоро юбилей - 20 лет! Присоединяйся к нашему сообществу!</p>
-            <a href="steam://run/90580" class="tg-btn">Телеграм</a>
+            <p>Совсем скоро юбилей - 20 лет! Присоединяйся к нашему сообществу и играй на серверах NovGames/Stellar/Reclamation!</p>
+            <div>
+                <h3>Ссылки:</h3>
+                <a href="https://t.me/VSEM2142" class="tg-btn">Telegram (Общий)</a>
+                <a href="https://vk.com/nova2142" class="vk-btn">ВКонтакте (NovGames Club)</a>
+                <a href="https://vk.com/nova2142" class="vk-btn">ВКонтакте (NovGames Alliance)</a>
+                <a href="https://discord.gg/d6atCY9ZdH" class="ds-btn">Discord Reclamation</a>
+                <a href="https://discord.gg/d6atCY9ZdH" class="ds-btn">Discord NovGames</a>
+                <a href="https://discord.gg/d6atCY9ZdH" class="ds-btn">Discord Stellar</a>
+            </div>
         </div>
     </header>
 
@@ -168,7 +247,7 @@
             <div class="card">
                 <h3>Обложки игр</h3>
                 <p>Скачивайте оригинальные обложки для коллекции.</p>
-                <a href="#">[Скачать ZIP]</a>
+                <a href="#"><s>Скачать</s></a>
             </div>
             </div>
         </div>
